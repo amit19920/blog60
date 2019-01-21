@@ -1,0 +1,48 @@
+{%extends 'base.html'%}
+{%block title%}blog{%endblock%}
+
+
+{%block body%}
+<header>
+<h1>Blog</h1>
+</header>	
+<section>
+<nav>
+<ul><a href="{% url 'home' %}">Home</a></ul>
+  <ul><a href="{% url 'about' %}">About</a></ul>
+  <ul><a href="{% url 'create' %}">Create A New Blog</a></ul>
+
+ </nav>
+  <article>
+    <article><div class="article-detail">
+		<div class ="arti">
+			<h2>{{arti.title}}</h2>
+			<p>{{arti.body}}</p>
+			<p>Published on {{arti.date}}</p>
+<br>
+<br>
+<br>{% for i in comme%}
+	
+	<p>{{i.comment_text}}</p>
+	
+	<p>Published on {{i.commneted_on}}</p>
+	{%endfor %}
+
+	
+		
+	<h1>Enter The Comment Here</h1>
+		<form class ="site-form" action="{% url 'home'%}" method="POST">	
+		        {% csrf_token %}
+			{{comment.comment_text}}
+			{{comment.blog}}
+			<input type="submit" value="Submit"/>
+
+		</form>
+</article>
+ 
+</div>
+  
+</section>
+
+{%endblock%}
+

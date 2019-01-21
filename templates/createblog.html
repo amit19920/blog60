@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{%block title%}Home{%endblock%}
+
+{%block body%}
+<header>
+<h1>Blog</h1>
+</header>	
+<section>
+<nav>
+<ul><a href="{% url 'home' %}">Home</a></ul>
+  <ul><a href="{% url 'about' %}">About</a></ul>
+  <ul><a href="{% url 'create' %}">Create A New Blog</a></ul>
+ </nav>
+  <article>
+    <article>
+<br>
+<br>
+<br>
+<h1>Enter The Comment Here</h1>
+		<form class ="blog-form" action="{% url 'home'%}" method="POST">	
+		        {% csrf_token %}
+			Enter Title {{creat.title}}
+			<br>
+			<br>
+			Enter slug {{creat.slug}}<br><br>
+
+			 Enter Blog<br>{{creat.body}}
+			<br>
+			<input type="submit" value="Submit"/>
+
+		</form>
+</article>
+</section>
+{%endblock%}

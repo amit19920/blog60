@@ -1,0 +1,27 @@
+
+{%extends 'base.html'%}
+{%block title%}Home{%endblock%}
+
+
+{%block body%}
+<header>
+<h1>Blog</h1>
+</header>	
+<section>
+<nav>
+<ul><a href="{% url 'home' %}">Home</a></ul>
+  <ul><a href="{% url 'about' %}">About</a></ul>
+  <ul><a href="{% url 'create' %">Create A New Blog</a></ul>
+ </nav>
+  <article>
+    <article>
+ this is about page
+ 
+<br>
+<br>
+<br>
+
+  </article>
+</section>
+
+{%endblock%}
